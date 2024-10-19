@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>My Lego Collection</title>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-gray-800 text-white p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">Lego Collection</a>
+            <div class="space-x-4">
+                <a href="/" class="hover:underline">Home</a>
+                <a href="/about" class="hover:underline">About</a>
+            </div>
+            <div class="relative group inline-block">
+                <button class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Theme</button>
+                <div class="absolute hidden group-hover:block bg-white text-gray-800 rounded-md shadow-lg mt-2">
+                    <a href="/lego/sets?theme=technic" class="block px-4 py-2 hover:bg-gray-200">Technic</a>
+                    <a href="/lego/sets?theme=city" class="block px-4 py-2 hover:bg-gray-200">City</a>
+                    <a href="/lego/sets?theme=creator" class="block px-4 py-2 hover:bg-gray-200">Creator</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+        <div class="text-center py-12 bg-gray-200 rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold mb-4">Explore the Lego Collection!</h1>
+            <p class="mb-6">Browse through hundreds of unique Lego sets!</p>
+            <a href="/lego/sets" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">See All Sets</a>
+        </div>
+
+        <!-- Sets Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-semibold mb-6">Featured Lego Sets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="/image/b2.jpg" alt="Set Name 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Set Name 1</h3>
+                        <p class="text-gray-600">A short blurb about set 1.</p>
+                        <a href="/lego/sets/002253963-1" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">View Set</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="/image/B3.jpg" alt="Set Name 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Set Name 2</h3>
+                        <p class="text-gray-600">A short blurb about set 2.</p>
+                        <a href="/lego/sets/0011-3" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">View Set</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="/image/batman.jpg" alt="Set Name 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Set Name 3</h3>
+                        <p class="text-gray-600">A short blurb about set 3.</p>
+                        <a href="/lego/sets/0011-2" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">View Set</a>
+                    </div>
+                </div>
+            </div>
+        <div>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-12">
+        <p>&copy; 2024 Lego Collection. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
