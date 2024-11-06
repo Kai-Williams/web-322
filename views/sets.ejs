@@ -49,15 +49,13 @@
       <table class="table table-zebra">
         <style>
             .colored-text {
-              color: #000; /* Dark black color */
-              background-color: transparent; /* No background color */
+              color: #000; 
+              background-color: transparent; 
               padding: 0.5rem;
             }
           </style>
-        <!-- head -->
-        <!-- row 1 -->
         <% sets.forEach(set=>{ %>
-          <tr class="colored-text"> <!-- Added colored-text class here -->
+          <tr class="colored-text"> 
             <td colspan="2">
               <div class="flex items-center space-x-3">
                 <div class="avatar">
@@ -88,7 +86,7 @@
             </td>
             <th>
               <a href="/lego/sets/<%= set.set_num %>"><button <a href="/lego/sets/<%= set.set_num %>"
-                  class="btn btn-primary btn-xs colored-text"> <!-- Added colored-text class here -->
+                  class="btn btn-primary btn-xs colored-text"> 
                   details
                 </button></a>
             </th>

@@ -19,10 +19,12 @@ const path = require('path');
 const PORT = process.env.PORT || 8080; 
 
 app.use(express.static(path.join(__dirname, "public")))
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"))
 
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "home.ejs"));
+    res.render("home");
 });
 
 app.get("/about", (req, res) => {
@@ -63,7 +65,7 @@ legoData.initialize()
     });
 
     async function run() {
-        await legoData.initialize() // testing functions
+        await legoData.initialize() 
     
         const allSets = legoData.getAllSets()
         console.log(allSets)
