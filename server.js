@@ -22,15 +22,15 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "home.html"));
+    res.sendFile(path.join(__dirname, "views", "home.ejs"));
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "about.html"));
+    res.sendFile(path.join(__dirname, "views", "about.ejs"));
 });
 
 app.get("/404", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "404.html"));
+    res.sendFile(path.join(__dirname, "views", "404.ejs"));
 });
 
 app.get("/lego/sets", (req, res) => {
