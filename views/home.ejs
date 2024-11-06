@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Lego Collection</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/">Lego Collection</a>
+            <a href="/about">About</a>
+            <div>
+                <button>Theme</button>
+                <div>
+                    <a href="/lego/sets?theme=technic">Technic</a>
+                    <a href="/lego/sets?theme=city">City</a>
+                    <a href="/lego/sets?theme=creator">Creator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto">
+        <div class="hero">
+            <h1>Explore the Lego Collection!</h1>
+            <a href="/lego/sets" class="btn">See Sets</a>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4">
+            <div class="card">
+                <img src="/image/b2.jpg" alt="Set Name 1">
+                <h2>Set Name 1</h2>
+                <p>A short blurb about set 1.</p>
+                <a href="/lego/sets/002253963-1" class="btn">View Set</a>
+            </div>
+            <div class="card">
+                <img src="/image/B3.jpg" alt="Set Name 2">
+                <h2>Set Name 2</h2>
+                <p>A short blurb about set 2.</p>
+                <a href="/lego/sets/0011-3" class="btn">View Set</a>
+            </div>
+            <div class="card">
+                <img src="/image/batman.jpg" alt="Set Name 3">
+                <h2>Set Name 3</h2>
+                <p>A short blurb about set 3.</p>
+                <a href="/lego/sets/0011-2" class="btn">View Set</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
