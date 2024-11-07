@@ -183,3 +183,52 @@ tr:nth-child(even) {
 .mb-4 { margin-bottom: 1rem; }
 .p-4 { padding: 1rem; }
 .text-center { text-align: center; }
+
+/* Navigation Bar */
+nav {
+  background-color: var(--primary-color); /* Primary color background */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-color); /* Accent color on hover */
+  color: #1f2937;
+}
+
+/* Responsive Navigation for Smaller Screens */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
