@@ -5,96 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lego Collection</title>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/tailwind.css">
 
-  <style>
-    .colored-text {
-      color: beige;
-    }
-  
-    
-  </style>
 </head>
-<body tabindex="-1">
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl" href="/">Lego Collection</a>
-    </div>
-    <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost sm:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </label>
-      <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a class="active" href="/lego/sets">View Collection</a></li>
-        <li><a class="" href="/about">About</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="container mx-auto p-4">
-    <div class="hero bg-base-200 rounded-lg p-6">
-      <div class="hero-content text-center ">
-        <div class="max-w-md">
-          <h1 class="text-5xl font-bold">Collection</h1>
-          <p class="py-6">Click on any of the three themes below to filter sets: <a href="/lego/sets?theme=Video Games and Accessories"
-              class="btn btn-primary btn-xs">Video games</a> <a href="/lego/sets?theme=Bulk Bricks"
-              class="btn btn-primary btn-xs">Bulk Bricks</a> <a href="/lego/sets?theme=9V"
-              class="btn btn-primary btn-border btn-xs">9V</a> </p>
-        </div>
+<body tabindex="0">
+  <header class="navbar bg-base-100">
+    <div class="flex justify-between items-center w-full">
+      <a href="/" class="btn btn-ghost text-xl font-semibold">Lego Collection</a>
+      <div class="dropdown">
+        <button tabindex="0" class="btn btn-ghost sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 right-0 z-10">
+          <li><a href="/lego/sets" class="active">View Collection</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
       </div>
     </div>
-    <br />
-    <div class="overflow-x-auto overflow-y-hidden">
-      <table class="table table-zebra">
+  </header>
+  
+  <main class="container mx-auto p-4">
+    <section class="hero bg-base-200 rounded-lg p-6 mb-6">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Our Collection</h1>
+          <p class="py-6">
+            Choose a theme to view sets:
+            <a href="/lego/sets?theme=Video Games and Accessories" class="btn btn-primary btn-xs">Video Games</a>
+            <a href="/lego/sets?theme=Bulk Bricks" class="btn btn-primary btn-xs">Bulk Bricks</a>
+            <a href="/lego/sets?theme=9V" class="btn btn-primary btn-xs">9V</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-x-auto">
+      <table class="table table-zebra w-full">
         <style>
-            .colored-text {
-              color: #000; 
-              background-color: transparent; 
-              padding: 0.5rem;
-            }
-          </style>
-        <% sets.forEach(set=>{ %>
-          <tr class="colored-text"> 
+          .highlighted-text {
+            color: #000;
+            background-color: transparent;
+            padding: 0.5rem;
+          }
+        </style>
+        <% sets.forEach(set => { %>
+          <tr class="highlighted-text">
             <td colspan="2">
               <div class="flex items-center space-x-3">
-                <div class="avatar">
-                  <div class="w-32 h-32">
-                    <img class="mask mask-squircle w-44 h-44" src="<%=set.img_url%>" alt="Lego-img" />
-                  </div>
+                <div class="avatar w-32 h-32">
+                  <img src="<%= set.img_url %>" alt="Lego Image" class="mask mask-squircle w-full h-full"/>
                 </div>
               </div>
             </td>
             <td>
-                <div class="px-14" >
-                  <p>
-                    <span class="py-6">
-                      <%= set.name %>
-                    </span> |
-                    <a href="/lego/sets?theme=<%= set.theme %>"><span class="py-6">
-                        <%= set.theme %>
-                      </span></a>
-                  </p>
-                </div>
-              </td>
-              
-            <td class="px-8">
-              <span><b>Year: </b>
-                <%= set.year %> - <b>Parts: </b>
-                  <%= set.num_parts %>
-              </span>
+              <div class="px-6">
+                <p>
+                  <span class="py-6"><%= set.name %></span> |
+                  <a href="/lego/sets?theme=<%= set.theme %>"><span class="py-6"><%= set.theme %></span></a>
+                </p>
+              </div>
             </td>
-            <th>
-              <a href="/lego/sets/<%= set.set_num %>"><button <a href="/lego/sets/<%= set.set_num %>"
-                  class="btn btn-primary btn-xs colored-text"> 
-                  details
-                </button></a>
-            </th>
+            <td class="px-8">
+              <span><strong>Year:</strong> <%= set.year %> - <strong>Parts:</strong> <%= set.num_parts %></span>
+            </td>
+            <td>
+              <a href="/lego/sets/<%= set.set_num %>" class="btn btn-primary btn-xs highlighted-text">Details</a>
+            </td>
           </tr>
-          <% }) %>
-            </tbody>
+        <% }) %>
       </table>
-    </div>
-  </div>
+    </section>
+  </main>
 </body>
 </html>
