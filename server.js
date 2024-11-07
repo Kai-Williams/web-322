@@ -28,11 +28,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    res.render("views", "about.ejs")
+    res.render("about"); 
 });
 
 app.get("/404", (req, res) => {
-    res.render("views", "404.ejs")
+    res.render("404"); 
 });
 
 app.get("/lego/sets", (req, res) => {
