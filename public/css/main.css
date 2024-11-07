@@ -255,15 +255,6 @@ nav ul li ul li a:hover {
   background-color: rgba(255, 255, 255, 0.3); /* Hover effect for dropdown items */
 }
 
-/* General Styles */
-body {
-  background-color: #1e3a8a;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
