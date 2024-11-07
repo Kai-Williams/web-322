@@ -4,82 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Lego Collection</title>
+  <title>Lego Collection - About</title>
   <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body tabindex="-1" class="bg-blue-900 text-white">
-  <!-- Navigation Bar -->
-  <nav class="navbar bg-blue-800 shadow-lg p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a class="text-2xl font-bold text-white" href="/">Lego Collection</a>
-
-      <div class="hidden sm:flex space-x-4 text-white">
-        <a href="/" class="hover:underline">Home</a>
-        <a href="/about" class="font-semibold underline">About</a>
-        <div class="relative group">
-          <button class="focus:outline-none">Theme</button>
-          <div class="absolute hidden group-hover:block bg-white text-blue-900 shadow-lg rounded-lg mt-2 p-2">
-            <a href="/lego/sets?theme=Mindstorms" class="block px-4 py-2 hover:bg-blue-100">Mindstorms</a>
-            <a href="/lego/sets?theme=Boost" class="block px-4 py-2 hover:bg-blue-100">Boost</a>
-            <a href="/lego/sets?theme=Technic" class="block px-4 py-2 hover:bg-blue-100">Technic</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile Dropdown -->
-      <div class="dropdown sm:hidden">
-        <label tabindex="0" class="btn btn-ghost text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </label>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-blue-800 text-white rounded-box w-52">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about" class="active">About</a></li>
-          <li>
-            <details>
-              <summary>Theme</summary>
-              <ul class="p-2 bg-blue-800">
-                <li><a href="/lego/sets?theme=Mindstorms">Mindstorms</a></li>
-                <li><a href="/lego/sets?theme=Boost">Boost</a></li>
-                <li><a href="/lego/sets?theme=Technic">Technic</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
-      </div>
+<body tabindex="-1">
+  <!-- Navbar without dropdown -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a class="brand" href="/">Lego Collection</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/about">About</a></li>
+        <li><a href="/lego/sets?theme=Mindstorms">Mindstorms</a></li>
+        <li><a href="/lego/sets?theme=Boost">Boost</a></li>
+        <li><a href="/lego/sets?theme=Technic">Technic</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <div class="container mx-auto mt-10">
-    <!-- Hero Section -->
-    <div class="hero bg-blue-700 rounded-lg p-6 text-center mb-8 shadow-lg">
-      <h1 class="text-4xl font-bold text-white">About the Creator</h1>
-      <p class="mt-4 text-lg text-blue-200">Learn more about the person behind the Lego Collection website.</p>
+  <div class="container mx-auto">
+    <div class="hero">
+      <h1>About the Creator</h1>
+      <p>Learn more about the person behind the Lego Collection website.</p>
     </div>
 
-    <!-- About Content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-blue-800 p-8 rounded-lg shadow-lg">
-      <!-- Profile Image -->
+    <div class="grid">
       <div>
-        <img class="w-full rounded-lg shadow-lg" src="/images/profile.jpg" alt="Profile Image of the Creator" />
+        <img src="/image/da.jpg" alt="Profile Image of the Creator" />
       </div>
-
-      <!-- Biography Text -->
-      <div class="prose max-w-prose text-blue-200">
-        <h2 class="text-3xl font-semibold mb-4 text-white">Hello! I'm [Your Name]</h2>
-        <p>I’m a web developer and Lego enthusiast with a passion for creating engaging digital experiences. This site showcases a collection of Lego sets that I love, and I’m excited to share it with other fans.</p>
-        <p>With a background in web development, I’ve combined my technical skills and my love for Lego to build this site. I hope it inspires creativity and brings joy to others!</p>
-        <p>If you have any questions or would like to connect, feel free to reach out via the contact page. Thank you for visiting!</p>
+      <div class="prose">
+        <h2>Hello! I'm [Your Name]</h2>
+        <p>I'm a web developer and Lego enthusiast with a passion for creating engaging digital experiences...</p>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-blue-800 text-blue-200 text-center py-4 mt-10">
-    <p>&copy; 2024 Lego Collection | Created by [Your Name]</p>
+  <footer>
+    <p>&copy; 2024 Lego Collection. All rights reserved.</p>
   </footer>
 </body>
 
