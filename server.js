@@ -20,12 +20,10 @@ const app = express()
 const port = process.env.PORT || 8080
 
 
-
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: true })) // Add this line for form data parsing
+app.use(express.urlencoded({ extended: true })) 
 app.use(express.static(path.join(__dirname, "public")))
 
-// Routes
 app.get("/", (req, res) => {
   res.render("home")
 })
@@ -48,7 +46,6 @@ app.get('/lego/sets', (req, res) => {
     })
 })
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 })
@@ -126,20 +123,3 @@ app.get('/lego/deleteSet/:num', (req, res) => {
       res.render('500', { message: `I'm sorry, but we have encountered the following error: ${err}` })
     })
 })
-
-
-
-
-/*
-async function run() {
-    await legoData.initialize() // testing functions
-
-    const allSets = legoData.getAllSets()
-    console.log(allSets)
-
-    const specificSet = await legoData.getSetByNum("0003977811-1")
-    console.log(specificSet)
-}
-
-run().catch(console.error)
-*/

@@ -1,4 +1,3 @@
-/* Reset and Box-Sizing */
 *, ::before, ::after {
   box-sizing: border-box; 
   margin: 0;
@@ -6,7 +5,6 @@
   border: 0;
 }
 
-/* Root Variables */
 :root {
   --tw-ring-color: rgba(59, 130, 246, 0.5);
   --tw-ring-offset-color: #fff;
@@ -20,7 +18,6 @@
   color-scheme: light;
 }
 
-/* General Styles */
 body {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: var(--background-color);
@@ -31,7 +28,6 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: var(--heading-color);
@@ -47,18 +43,16 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-/* Links */
 a {
-  color: var(--primary-color);
+  color: black;
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: lightblue;
   text-decoration: underline;
 }
 
-/* Buttons */
 button {
   font-family: inherit;
   font-size: 1rem;
@@ -85,7 +79,6 @@ button:disabled {
   opacity: 0.6;
 }
 
-/* Navigation */
 nav {
   background-color: var(--primary-color);
   padding: 1rem;
@@ -100,7 +93,6 @@ nav a:hover {
   color: var(--accent-color);
 }
 
-/* Cards */
 .card {
   background-color: #fff;
   border: 1px solid var(--tw-border-color);
@@ -121,7 +113,6 @@ nav a:hover {
   color: var(--text-color);
 }
 
-/* Forms */
 input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 0.75rem;
@@ -137,7 +128,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
-/* Tables */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -158,7 +148,6 @@ tr:nth-child(even) {
   background-color: var(--background-color);
 }
 
-/* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -172,22 +161,18 @@ tr:nth-child(even) {
   animation: fade-in 0.5s ease-in;
 }
 
-/* Scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-color) transparent;
 }
 
-/* Utility Classes */
 .mt-4 { margin-top: 1rem; }
 .mb-4 { margin-bottom: 1rem; }
 .p-4 { padding: 1rem; }
 .text-center { text-align: center; }
 
-/* Navigation Bar */
-/* Updated Navigation Bar Styling */
 nav {
-  background-color: #1e3a8a; /* Darker blue for nav background */
+  background-color: #1e3a8a; 
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -222,11 +207,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Soft hover effect */
+  background-color: rgba(255, 255, 255, 0.2); 
 }
 
 nav ul li ul {
-  display: none; /* Hide dropdown initially */
+  display: none; 
   position: absolute;
   top: 100%;
   left: 0;
@@ -238,7 +223,7 @@ nav ul li ul {
 }
 
 nav ul li:hover ul {
-  display: block; /* Show dropdown on hover */
+  display: block; 
 }
 
 nav ul li ul li {
@@ -252,7 +237,7 @@ nav ul li ul li a {
 }
 
 nav ul li ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Hover effect for dropdown items */
+  background-color: rgba(255, 255, 255, 0.3); 
 }
 
 .container {
@@ -261,7 +246,6 @@ nav ul li ul li a:hover {
   padding: 1rem;
 }
 
-/* Navbar Styles */
 .navbar {
   background-color: #1e40af;
   padding: 1rem;
@@ -360,7 +344,6 @@ nav ul li ul li a:hover {
   line-height: 1.6;
 }
 
-/* Footer */
 footer {
   background-color: #1e40af;
   color: #93c5fd;
@@ -374,3 +357,79 @@ footer p {
   font-size: 0.875rem;
 }
 
+img {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.avatar img {
+  width: 8rem; 
+  height: 8rem; 
+  border-radius: 50%;
+  object-fit: cover; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 100%;
+  height: 12rem; 
+  object-fit: cover; 
+  border-radius: 0.5rem; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.table img {
+  width: 5rem; 
+  height: 5rem; 
+  object-fit: cover; 
+  border-radius: 0.25rem; 
+}
+
+.flex {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.mt-4 {
+  margin-top: 1rem; 
+}
+
+.gap-4 {
+  gap: 1rem; 
+}
+
+.btn {
+  padding: 0.5rem 1.5rem; 
+  font-size: 1rem; 
+  background-color: var(--primary-color); 
+  color: #ffffff; 
+  border-radius: 0.25rem; 
+  text-align: center; 
+  transition: background-color 0.3s; 
+}
+
+.btn:hover {
+  background-color: var(--secondary-color); 
+}
+
+.lego-collection .card img {
+  width: 15%; 
+  height: auto;
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.lego-collection .card img {
+  margin-bottom: 10px; 
+}
+
+.lego-collection .card p {
+  margin-bottom: 15px; 
+}
+
+.lego-collection .card .btn {
+  display: block; 
+  margin-top: 10px; 
+}
