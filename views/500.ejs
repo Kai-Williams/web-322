@@ -1,27 +1,24 @@
-<!-- /********************************************************************************
-* WEB322 – Assignment 03
-*
-* I declare that this assignment is my own work in accordance with Seneca's
-* Academic Integrity Policy:
-*
-* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
-*
-* Name: Kai Williams       Student ID: 103714234      Date: 2024-10-18
-*
-* Published URL: web-322-rkwzlz5u7-kai-williams-projects.vercel.app
-*
-********************************************************************************/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internal Server Error</title>
+    <title>Error 500</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <%- include('partials/navbar', { page: '' }) %>
-    <h1>500 - Internal Server Error</h1>
-    <p>Oops! Something went wrong on our end. Please try again later.</p>
-    <a href="/">Go back to Home</a>
+
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex flex-col lg:flex-row-reverse">
+            <img src="/image/404.png" alt="Error 404 Image" class="max-w-sm rounded-lg shadow-2xl">
+            <div>
+                <h1 class="text-5xl font-bold">ERROR: 500</h1>
+                <p class="py-6">Oops! Something went wrong on our end. Please try again later.</p>
+                <p class="text-sm"><%= message %></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
