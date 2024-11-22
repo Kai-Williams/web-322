@@ -1,54 +1,52 @@
+<!-- /********************************************************************************
+* WEB322 – Assignment 05
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Kai Williams Student ID: 103714234 Date: 2024-11-21
+*
+* Published URL: ___________________________________________________________
+*
+********************************************************************************/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed information about the Lego set <%= set.name %> including theme, year, and parts count.">
+    <meta name="description" content="Detailed information about the Lego set <%= set.name %>, including theme, year, and parts count.">
     <title><%= set.name %> - Lego Set Details</title>
     <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
-  
+
     <%- include('partials/navbar', { page: "" }) %>
 
-    <div class="container mt-4">
-        <section class="hero p-8 text-center rounded shadow fade-in">
-            <div class="max-w-md mx-auto space-y-2">
-                <h1 class="text-4xl font-bold text-white"><%= set.name %></h1>
-                <p class="text-lg text-lightblue">Below, you will find detailed information about the set: <%= set.name %></p>
-            </div>
+    <div class="container mt-6">
+        <section class="hero p-8 text-center bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 rounded shadow fade-in">
+            <h1 class="text-4xl font-bold text-white mb-4"><%= set.name %></h1>
+            <p class="text-lg text-lightblue">Explore the detailed information about <%= set.name %> below.</p>
         </section>
 
-        <div class="flex flex-col items-center mt-8 gap-4">
+        <div class="flex flex-col items-center mt-8 gap-6">
             <div class="avatar">
-                <img class="w-48 rounded shadow" src="<%= set.img_url %>" alt="<%= set.name %>">
+                <img class="w-48 h-48 rounded-full shadow object-cover" src="<%= set.img_url %>" alt="<%= set.name %>">
             </div>
 
-            <div class="card w-full max-w-md p-4">
-                <h2 class="text-xl font-semibold text-heading-color">Name: <%= set.name %></h2>
-                <p class="mt-2"><strong>Year:</strong> <%= set.year %></p>
-                <p><strong>Theme:</strong> <%= set.Theme.name %></p>
-                <p><strong>Number of Parts:</strong> <%= set.num_parts %></p>
-                <div id="quote" class="mt-4 text-lg italic text-text-color">"Loading quote..."</div>
-                <div id="author" class="text-right text-text-color">-</div>
-                <a href="/lego/editSet/<%= set.set_num %>" class="btn mt-4">Edit</a>
+            <div class="card w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
+                <h2 class="text-2xl font-semibold text-heading-color mb-4">Set Details</h2>
+                <p>Name: <%= set.name %></p>
+                <p>Year Released:<%= set.year %></p>
+                <p>Theme:<%= set.Theme.name %></p>
+                <p>Number of Parts: <%= set.num_parts %></p>
+                <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-primary mt-6">Edit Set</a>
             </div>
 
-            <!-- Back Button -->
-            <button onclick="history.back(); return false;" class="btn">Back</button>
+            <button onclick="history.back(); return false;" class="btn btn-secondary">Back</button>
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => { 
-            fetch("")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("quote").innerText = `"${data.content}"`;
-                    document.getElementById("author").innerText = `- ${data.author}`;
-                })
-                .catch(error => console.error("Error fetching quote:", error));
-        });
-    </script>
 </body>
 </html>
