@@ -28,11 +28,6 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true })) // Add this line for form data parsing
 
 
-app.use((req, res, next) => {
-  res.locals.session = req.session
-  next()
-})
-
 app.use(
   clientSessions({
     cookieName: 'session', // this is the object name that will be added to 'req'
