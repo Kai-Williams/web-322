@@ -7,24 +7,20 @@
     <title>User History</title>
   </head>
   <body>
-    <%- include('partials/navbar', {page: '/userHistory'}) %>
+    <%- include('partials/navbar', { page: '/userHistory' }) %>
 
-    <div class="container mx-auto my-5">
-      <div
-        class="hero rounded hero-lg bg-base-200 bg-cover bg-center"
-        style="background-image: url(/images/944250.jpg)"
-      >
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center m-6">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold"><%= session.user.userName %></h1>
-            <p class="py-6">User History: <%= session.user.email %></p>
-          </div>
+
+    <div class="container">
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1><%= session.user.userName %></h1>
+          <p>User Email: <%= session.user.email %></p>
         </div>
-      </div>
+      </section>
 
-      <div class="overflow-x-auto mt-6">
-        <table class="table w-full overflow-hidden">
+      <section>
+        <table>
           <thead>
             <tr>
               <th>Login Date/Time</th>
@@ -34,21 +30,13 @@
           <tbody>
             <% session.user.loginHistory.forEach(history => { %>
             <tr>
-              <td>
-                <div class="flex">
-                  <p><%= history.dateTime %></p>
-                </div>
-              </td>
-              <td>
-                <div class="flex">
-                  <p><%= history.userAgent %></p>
-                </div>
-              </td>
+              <td><%= history.dateTime %></td>
+              <td><%= history.userAgent %></td>
             </tr>
             <% }) %>
           </tbody>
         </table>
-      </div>
+      </section>
     </div>
   </body>
 </html>
